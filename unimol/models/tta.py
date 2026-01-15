@@ -490,10 +490,10 @@ def drugclip_architecture(args):
     args.mol.pooler_activation_fn = getattr(args, "mol_pooler_activation_fn", "tanh")
     args.mol.post_ln = getattr(args, "mol_post_ln", False)
     args.mol.masked_token_loss = 1.0
-    args.mol.masked_coord_loss = -5
-    args.mol.masked_dist_loss = -10
-    args.mol.x_norm_loss = -0.01
-    args.mol.delta_pair_repr_norm_loss = -0.01
+    args.mol.masked_coord_loss = 5
+    args.mol.masked_dist_loss = 10
+    args.mol.x_norm_loss = 0.01
+    args.mol.delta_pair_repr_norm_loss = 0.01
     args.mol.kl_loss = 1000.0
     args.mol.simclr_loss = 0.01
     args.mol.kl_temperature = 1.0
@@ -521,10 +521,10 @@ def drugclip_architecture(args):
     )
     args.pocket.post_ln = getattr(args, "pocket_post_ln", False)
     args.pocket.masked_token_loss = 1.0
-    args.pocket.masked_coord_loss = -1.0
-    args.pocket.masked_dist_loss = -1.0
-    args.pocket.x_norm_loss = -0.01
-    args.pocket.delta_pair_repr_norm_loss = -0.01
+    args.pocket.masked_coord_loss = 1.0
+    args.pocket.masked_dist_loss = 1.0
+    args.pocket.x_norm_loss = 0.01
+    args.pocket.delta_pair_repr_norm_loss = 0.01
     args.pocket.kl_loss = 1000.0
     args.pocket.simclr_loss = 0.01
     args.pocket.kl_temperature = 1.0
